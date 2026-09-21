@@ -1,0 +1,268 @@
+/* ============================================
+   TipTap Modals — Production CSS
+   ============================================ */
+
+.tiptap-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tiptap-modal-content {
+  background: #fff;
+  border-radius: 4px;
+  width: 380px;
+  max-width: 90vw;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  animation: slideUp 0.2s ease;
+}
+
+.tiptap-modal-wide {
+  width: 480px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.tiptap-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+}
+
+.tiptap-modal-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tiptap-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #999;
+  line-height: 1;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.tiptap-modal-close:hover {
+  color: #333;
+  background: #eee;
+}
+
+/* -- Modal Body -- */
+.tiptap-modal-body {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* -- Section Labels -- */
+.tiptap-modal-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 12px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tiptap-modal-section-label:first-child {
+  margin-top: 0;
+}
+
+/* -- Grid of items (emojis, special chars) -- */
+.tiptap-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+  gap: 4px;
+  padding: 0;
+}
+
+.tiptap-modal-grid-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: all 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  height: 32px;
+}
+
+.tiptap-modal-grid-btn:hover {
+  background: #e8f4fd;
+  border-color: #0098f7;
+}
+
+/* -- Form Fields (Link Modal) -- */
+.tiptap-modal-form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tiptap-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tiptap-modal-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.tiptap-modal-field input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+  color: #333;
+  background: #fff; /* Ensure inputs don't take on system dark-mode backgrounds */
+}
+
+.tiptap-modal-field input:focus {
+  border-color: #0098f7;
+}
+
+/* -- Checkbox -- */
+.tiptap-modal-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tiptap-modal-checkbox input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: #0098f7;
+}
+
+.tiptap-modal-checkbox label {
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* -- Action Buttons -- */
+.tiptap-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tiptap-modal-btn-cancel {
+  padding: 7px 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #333;
+  transition: all 0.12s;
+}
+
+.tiptap-modal-btn-cancel:hover {
+  background: #f5f5f5;
+}
+
+.tiptap-modal-btn-primary {
+  padding: 7px 16px;
+  border: none;
+  background: #0098f7;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.12s;
+}
+
+.tiptap-modal-btn-primary:hover {
+  background: #0080d4;
+}
+
+/* -- Help Table -- */
+.tiptap-help-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tiptap-help-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 16px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tiptap-help-table td {
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tiptap-help-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tiptap-help-table kbd {
+  display: inline-block;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  color: #333;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+}

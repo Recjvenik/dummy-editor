@@ -1,0 +1,67 @@
+.fr-mathlive-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* MathLive's virtual keyboard panel renders at z-index: 105 (as a
+     sibling appended to <body>), so this must stay below that or the
+     keyboard is hidden and unclickable behind the backdrop. */
+  z-index: 50;
+}
+
+.fr-mathlive-panel {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.fr-mathlive-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.fr-mathlive-field {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.fr-mathlive-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.fr-mathlive-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fr-mathlive-btn-cancel {
+  background: #fff;
+  border-color: #ccc;
+  color: #333;
+}
+
+.fr-mathlive-btn-insert {
+  background: #1976d2;
+  color: #fff;
+}
+
+.fr-mathlive-formula {
+  display: inline-block;
+  vertical-align: middle;
+}
