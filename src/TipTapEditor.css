@@ -142,7 +142,7 @@
 
 /* -- Toolbar Select Dropdowns (compact, Froala-like) -- */
 .tiptap-toolbar select {
-  padding: 0 4px;
+  padding: 0 6px;
   border: none;
   border-radius: 0;
   background: transparent;
@@ -154,7 +154,7 @@
   transition: background 0.1s ease;
   appearance: auto;
   -webkit-appearance: auto;
-  max-width: 80px;
+  max-width: none;
   font-family: inherit;
 }
 
@@ -394,11 +394,16 @@
   color: #999;
 }
 
-/* -- Paragraph Styles (Froala-compatible) -- */
-.ProseMirror .fr-text-gray { color: #aaa !important; }
-.ProseMirror .fr-text-bordered { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px 0; }
-.ProseMirror .fr-text-spaced { letter-spacing: 1px; }
-.ProseMirror .fr-text-uppercase { text-transform: uppercase; }
+/* -- Paragraph Styles (from dropdown) -- */
+p.fr-text-gray { color: #aaa; }
+p.fr-text-bordered { border-top: solid 1px #222; border-bottom: solid 1px #222; padding: 10px 0; }
+p.fr-text-spaced { letter-spacing: 1px; }
+p.fr-text-uppercase { text-transform: uppercase; }
+
+/* -- Inline Styles (from dropdown) -- */
+span.fr-text-big-red { font-size: 20px; color: red; font-weight: bold; }
+span.fr-text-small-blue { font-size: 10px; color: blue; }
+span.fr-text-highlighted { background-color: yellow; font-style: italic; }
 
 /* -- Highlight -- */
 .ProseMirror mark {

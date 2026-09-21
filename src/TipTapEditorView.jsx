@@ -25,6 +25,7 @@ import { FontSize } from './extensions/FontSize';
 import { Indent } from './extensions/Indent';
 import { LineHeight } from './extensions/LineHeight';
 import { ParagraphStyle } from './extensions/ParagraphStyle';
+import { InlineStyle } from './extensions/InlineStyle';
 import { MathLiveExtension } from './extensions/MathLiveExtension';
 
 import TipTapToolbar from './TipTapToolbar';
@@ -95,6 +96,7 @@ const TipTapEditorView = () => {
       Indent,
       LineHeight,
       ParagraphStyle,
+      InlineStyle,
       MathLiveExtension,
     ],
     content: '',

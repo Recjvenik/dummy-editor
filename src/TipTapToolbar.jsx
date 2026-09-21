@@ -4,7 +4,7 @@ import {
   Subscript, Superscript, AlignLeft, AlignCenter, AlignRight, AlignJustify,
   List, ListOrdered, Quote, Undo, Redo, Image as ImageIcon,
   Link as LinkIcon, Unlink, Table as TableIcon, Eraser, Minus, Video,
-  Maximize, Minimize, Code, CodeXml, Printer,
+  Maximize, Minimize, Code, CodeXml, Printer, Terminal,
   Indent as IndentIcon, Outdent as OutdentIcon, FileText, Smile, Hash, Sigma,
   FileDown, Baseline, Highlighter, ListTodo, HelpCircle, CopyCheck, Check,
   UploadCloud
@@ -188,11 +188,20 @@ const TipTapToolbar = ({
             <option value="4">Heading 4</option>
           </select>
           <select onChange={e => { const v = e.target.value; v ? editor.commands.setParagraphStyle(v) : editor.commands.unsetParagraphStyle(); }} value={editor.getAttributes('paragraph')?.class || ''} title="Paragraph Style">
-            <option value="">Style</option>
+            <option value="">Paragraph Style</option>
             <option value="fr-text-gray">Gray</option>
             <option value="fr-text-bordered">Bordered</option>
             <option value="fr-text-spaced">Spaced</option>
             <option value="fr-text-uppercase">Uppercase</option>
+          </select>
+          <select onChange={e => { 
+            editor.commands.unsetInlineStyle(); 
+            if (e.target.value) { editor.commands.setInlineStyle(e.target.value); } 
+          }} value={editor.getAttributes('inlineStyle')?.class || ''} title="Inline Style">
+            <option value="">Inline Style</option>
+            <option value="fr-text-big-red">Big Red</option>
+            <option value="fr-text-small-blue">Small Blue</option>
+            <option value="fr-text-highlighted">Highlighted</option>
           </select>
         </div>
 
@@ -250,6 +259,9 @@ const TipTapToolbar = ({
           </button>
           <button onClick={() => editor.chain().focus().toggleCodeBlock().run()} className={editor.isActive('codeBlock') ? 'is-active' : ''} title="Code Block">
             <CodeXml size={18} strokeWidth={1.75} />
+          </button>
+          <button onClick={() => editor.chain().focus().toggleCode().run()} className={editor.isActive('code') ? 'is-active' : ''} title="Inline Code">
+            <Terminal size={18} strokeWidth={1.75} />
           </button>
         </div>
       </div>
